@@ -236,9 +236,6 @@ grid-template-columns:1fr;
 <a href="#about">About</a>
 <a href="#contact">Contact</a>
 </nav>
-
-Book Appointment
-
 </header>
 <section class="hero" id="home">
 <div class="hero-content">
@@ -394,21 +391,21 @@ All Rights Reserved.
   <span class="close" onclick="closePhoto()">×</span>
   <img id="popupImage">
 </div>
-
-<script>
-document.querySelectorAll(".card img").forEach(function(photo) {
+ <script>
+document.querySelectorAll("img:not(#popupImage)").forEach(function(photo) {
   photo.style.cursor = "pointer";
 
-  photo.onclick = function() {
+  photo.addEventListener("click", function() {
     document.getElementById("popupImage").src = this.src;
     document.getElementById("photoPopup").style.display = "flex";
-  };
+  });
 });
 
 function closePhoto() {
   document.getElementById("photoPopup").style.display = "none";
 }
 </script>
+
 </body>
 </html>
  
