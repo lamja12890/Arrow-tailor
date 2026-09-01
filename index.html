@@ -196,8 +196,34 @@ height:350px;
 .features{
 grid-template-columns:1fr;
 }
+
+<style>
+ 
+ .photo-popup {
+  display: none;
+  position: fixed;
+  z-index: 9999;
+  inset: 0;
+  background: rgba(0,0,0,0.9);
+  justify-content: center;
+  align-items: center;
 }
-</style>
+
+.photo-popup img {
+  max-width: 90%;
+  max-height: 90%;
+  object-fit: contain;
+}
+
+.photo-popup .close {
+  position: absolute;
+  top: 20px;
+  right: 30px;
+  color: white;
+  font-size: 40px;
+  cursor: pointer;
+}
+ </style>
 </head>
 <body>
 <header>
@@ -364,6 +390,25 @@ WHATSAPP
 <br>
 All Rights Reserved.
 </footer>
+ <div class="photo-popup" id="photoPopup">
+  <span class="close" onclick="closePhoto()">×</span>
+  <img id="popupImage">
+</div>
+
+<script>
+document.querySelectorAll(".card img").forEach(function(photo) {
+  photo.style.cursor = "pointer";
+
+  photo.onclick = function() {
+    document.getElementById("popupImage").src = this.src;
+    document.getElementById("photoPopup").style.display = "flex";
+  };
+});
+
+function closePhoto() {
+  document.getElementById("photoPopup").style.display = "none";
+}
+</script>
 </body>
 </html>
  
