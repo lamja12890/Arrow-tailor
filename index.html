@@ -6,6 +6,40 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>ARROW TAILOR SHOP</title>
 <style>
+ /* Popup Screen Style */
+.photo-popup {
+  display: none; 
+  position: fixed; 
+  top: 0; 
+  left: 0; 
+  width: 100%; 
+  height: 100%; 
+  background-color: rgba(0, 0, 0, 0.9); 
+  justify-content: center; 
+  align-items: center; 
+  z-index: 99999;
+}
+
+/* Pop up Image Style */
+#popupImage {
+  max-width: 90%; 
+  max-height: 85vh; 
+  border-radius: 8px; 
+  border: 2px solid #e8b84b;
+  box-shadow: 0 0 20px rgba(0,0,0,0.5);
+}
+
+/* Close (X) Button Style */
+.close {
+  position: absolute; 
+  top: 20px; 
+  right: 35px; 
+  color: #ffffff; 
+  font-size: 45px; 
+  font-weight: bold; 
+  cursor: pointer;
+  z-index: 100000;
+}
 *{
 margin:0;
 padding:0;
