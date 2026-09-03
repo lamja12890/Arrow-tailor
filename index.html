@@ -388,24 +388,24 @@ WHATSAPP
 All Rights Reserved.
 </footer>
  <div class="photo-popup" id="photoPopup">
-  <span class="close" onclick="closePhoto()">×</span>
+  <span class="close" onclick="closePhoto()">&times;</span>
   <img id="popupImage">
 </div>
- <script>
-document.querySelectorAll("img:not(#popupImage)").forEach(function(photo) {
-  photo.style.cursor = "pointer";
 
-  photo.addEventListener("click", function() {
-    document.getElementById("popupImage").src = this.src;
-    document.getElementById("photoPopup").style.display = "flex";
+<script>
+  document.querySelectorAll("img:not(#popupImage)").forEach(function(photo) {
+    photo.style.cursor = "pointer";
+
+    photo.addEventListener("click", function() {
+      document.getElementById("popupImage").src = this.src;
+      document.getElementById("photoPopup").style.display = "flex";
+    });
   });
-});
 
-function closePhoto() {
-  document.getElementById("photoPopup").style.display = "none";
-}
+  function closePhoto() {
+    document.getElementById("photoPopup").style.display = "none";
+  }
 </script>
-
 </body>
 </html>
  
